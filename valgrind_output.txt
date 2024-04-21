@@ -1,0 +1,253 @@
+==29226== Memcheck, a memory error detector
+==29226== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==29226== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==29226== Command: ./lanParty date/t7/c.in date/t7/d.in out/out7.out
+==29226== 
+--29226-- Valgrind options:
+--29226--    --leak-check=full
+--29226--    --show-leak-kinds=all
+--29226--    -v
+--29226-- Contents of /proc/version:
+--29226--   Linux version 5.15.146.1-microsoft-standard-WSL2 (root@65c757a075e2) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.37) #1 SMP Thu Jan 11 04:09:03 UTC 2024
+--29226-- 
+--29226-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--29226-- Page sizes: currently 4096, max supported 4096
+--29226-- Valgrind library directory: /usr/libexec/valgrind
+--29226-- Reading syms from /home/david/PA/tema1/lanParty
+--29226-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--29226--   Considering /usr/lib/debug/.build-id/24/6ac0d8deba5a40c63e9a1a87d4d779d8eb589f.debug ..
+--29226--   .. build-id is valid
+--29226-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--29226--    object doesn't have a symbol table
+--29226--    object doesn't have a dynamic symbol table
+--29226-- Scheduler: using generic scheduler lock implementation.
+--29226-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==29226== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-29226-by-david-on-???
+==29226== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-29226-by-david-on-???
+==29226== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-29226-by-david-on-???
+==29226== 
+==29226== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==29226== don't want to do, unless you know exactly what you're doing,
+==29226== or are doing some strange experiment):
+==29226==   /usr/bin/vgdb --pid=29226 ...command...
+==29226== 
+==29226== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==29226==   /path/to/gdb ./lanParty
+==29226== and then give GDB the following command
+==29226==   target remote | /usr/bin/vgdb --pid=29226
+==29226== --pid is optional if only one valgrind process is running
+==29226== 
+--29226-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580bcec2 (???)
+--29226-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580bcedc (???)
+--29226-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--29226--    object doesn't have a symbol table
+--29226-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+--29226--    object doesn't have a symbol table
+==29226== WARNING: new redirection conflicts with existing -- ignoring it
+--29226--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580bcec2 ???
+--29226--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x0484ee30 strlen
+--29226-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x484fcd0 (strcmp)
+--29226-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4853840 (mempcpy)
+--29226-- Reading syms from /usr/lib/x86_64-linux-gnu/libm.so.6
+--29226--   Considering /usr/lib/debug/.build-id/b5/5ba6d8b5954b479fab2a69a54b9f56451fbee0.debug ..
+--29226--   .. build-id is valid
+--29226-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--29226--   Considering /usr/lib/debug/.build-id/96/2015aa9d133c6cbcfb31ec300596d7f44d3348.debug ..
+--29226--   .. build-id is valid
+==29226== WARNING: new redirection conflicts with existing -- ignoring it
+--29226--     old: 0x049ecc60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--29226--     new: 0x049ecc60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==29226== WARNING: new redirection conflicts with existing -- ignoring it
+--29226--     old: 0x049ecc60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--29226--     new: 0x049ecc60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+==29226== WARNING: new redirection conflicts with existing -- ignoring it
+--29226--     old: 0x049ecc60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--29226--     new: 0x049ecc60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==29226== WARNING: new redirection conflicts with existing -- ignoring it
+--29226--     old: 0x049ecc60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--29226--     new: 0x049ecc60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+--29226-- REDIR: 0x49ef720 (libc.so.6:strnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef9e0 (libc.so.6:strpbrk) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef2e0 (libc.so.6:strcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4a0dcd0 (libc.so.6:wcsnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f06d0 (libc.so.6:memset) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4a0c540 (libc.so.6:wcslen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4a0c370 (libc.so.6:wcschr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef260 (libc.so.6:index) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef960 (libc.so.6:rindex) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f05a0 (libc.so.6:memmove) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+==29226== Preferring higher priority redirection:
+--29226--     old: 0x04ae77c0 (__memcpy_avx_unalign) R-> (2018.0) 0x04850f90 __memcpy_avx_unaligned_erms
+--29226--     new: 0x04ae77c0 (__memcpy_avx_unalign) R-> (2018.1) 0x04852880 memmove
+--29226-- REDIR: 0x4a0c3f0 (libc.so.6:wcscmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f09e0 (libc.so.6:stpncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4a0c9b0 (libc.so.6:wmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef830 (libc.so.6:strncmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0a70 (libc.so.6:strcasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef420 (libc.so.6:strcspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4a0c470 (libc.so.6:wcscpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef1d0 (libc.so.6:strcat) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0b60 (libc.so.6:strncasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0480 (libc.so.6:bcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f8570 (libc.so.6:memrchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f2010 (libc.so.6:strchrnul) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef390 (libc.so.6:strcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0b10 (libc.so.6:strcasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef6a0 (libc.so.6:strlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49ef8d0 (libc.so.6:strncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0950 (libc.so.6:stpcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f03f0 (libc.so.6:memchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49efb00 (libc.so.6:strspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f07d0 (libc.so.6:mempcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f0ac0 (libc.so.6:strncasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x49f1f80 (libc.so.6:rawmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--29226-- REDIR: 0x4ae4610 (libc.so.6:__strrchr_avx2) redirected to 0x484e810 (rindex)
+--29226-- REDIR: 0x49ec0a0 (libc.so.6:malloc) redirected to 0x4848820 (malloc)
+--29226-- REDIR: 0x49effc0 (libc.so.6:__GI_strstr) redirected to 0x4853ae0 (__strstr_sse2)
+--29226-- REDIR: 0x4ae02c0 (libc.so.6:__memchr_avx2) redirected to 0x484fd50 (memchr)
+--29226-- REDIR: 0x4ae77c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4852880 (memmove)
+--29226-- REDIR: 0x4ae47e0 (libc.so.6:__strlen_avx2) redirected to 0x484ed10 (strlen)
+--29226-- REDIR: 0x4ae5cb0 (libc.so.6:__strcpy_avx2) redirected to 0x484ee60 (strcpy)
+--29226-- REDIR: 0x49ec3e0 (libc.so.6:free) redirected to 0x484b210 (free)
+--29226-- REDIR: 0x4ae4400 (libc.so.6:__strchrnul_avx2) redirected to 0x4853330 (strchrnul)
+--29226-- REDIR: 0x4ae7780 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4853440 (mempcpy)
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x10BB63: freeTeam (lanPartyLib.c:1007)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10BB74: freeTeam (lanPartyLib.c:1012)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10BB83: freeTeam (lanPartyLib.c:1013)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== 
+==29226== HEAP SUMMARY:
+==29226==     in use at exit: 4,980 bytes in 252 blocks
+==29226==   total heap usage: 1,524 allocs, 1,272 frees, 49,100 bytes allocated
+==29226== 
+==29226== Searching for pointers to 252 not-freed blocks
+==29226== Checked 107,856 bytes
+==29226== 
+==29226== 19 bytes in 1 blocks are indirectly lost in loss record 1 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B65F: enQueue (lanPartyLib.c:850)
+==29226==    by 0x10A65B: addTeamToQueue (lanPartyLib.c:429)
+==29226==    by 0x10A8FE: printRounds (lanPartyLib.c:503)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 32 bytes in 1 blocks are indirectly lost in loss record 2 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B620: enQueue (lanPartyLib.c:844)
+==29226==    by 0x10A65B: addTeamToQueue (lanPartyLib.c:429)
+==29226==    by 0x10A8FE: printRounds (lanPartyLib.c:503)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 67 (16 direct, 51 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B5A4: createQueue (lanPartyLib.c:826)
+==29226==    by 0x1095AA: main (main.c:86)
+==29226== 
+==29226== 386 bytes in 31 blocks are definitely lost in loss record 4 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B8D5: push (lanPartyLib.c:935)
+==29226==    by 0x10A4EE: printAllTeamsOnRoundAndFillStacks (lanPartyLib.c:391)
+==29226==    by 0x10A88D: printRounds (lanPartyLib.c:484)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 400 bytes in 31 blocks are indirectly lost in loss record 5 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B786: deQueue (lanPartyLib.c:886)
+==29226==    by 0x10A486: printAllTeamsOnRoundAndFillStacks (lanPartyLib.c:383)
+==29226==    by 0x10A88D: printRounds (lanPartyLib.c:484)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 405 bytes in 32 blocks are definitely lost in loss record 6 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B65F: enQueue (lanPartyLib.c:850)
+==29226==    by 0x10A428: insertTeamsOnQueue (lanPartyLib.c:368)
+==29226==    by 0x1095C5: main (main.c:89)
+==29226== 
+==29226== 414 bytes in 30 blocks are definitely lost in loss record 7 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B65F: enQueue (lanPartyLib.c:850)
+==29226==    by 0x10A65B: addTeamToQueue (lanPartyLib.c:429)
+==29226==    by 0x10A8FE: printRounds (lanPartyLib.c:503)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 419 bytes in 31 blocks are indirectly lost in loss record 8 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B786: deQueue (lanPartyLib.c:886)
+==29226==    by 0x10A496: printAllTeamsOnRoundAndFillStacks (lanPartyLib.c:384)
+==29226==    by 0x10A88D: printRounds (lanPartyLib.c:484)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 433 bytes in 31 blocks are definitely lost in loss record 9 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B9F7: pop (lanPartyLib.c:968)
+==29226==    by 0x10A6BB: printCurrentWinnersFromStack (lanPartyLib.c:446)
+==29226==    by 0x10A965: printRounds (lanPartyLib.c:513)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 472 bytes in 1 blocks are still reachable in loss record 10 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x49C664D: __fopen_internal (iofopen.c:65)
+==29226==    by 0x49C664D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==29226==    by 0x109FA6: calculateCheckerId (lanPartyLib.c:169)
+==29226==    by 0x1093ED: main (main.c:20)
+==29226== 
+==29226== 1,392 (992 direct, 400 indirect) bytes in 31 blocks are definitely lost in loss record 11 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B767: deQueue (lanPartyLib.c:885)
+==29226==    by 0x10A486: printAllTeamsOnRoundAndFillStacks (lanPartyLib.c:383)
+==29226==    by 0x10A88D: printRounds (lanPartyLib.c:484)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== 1,411 (992 direct, 419 indirect) bytes in 31 blocks are definitely lost in loss record 12 of 12
+==29226==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10B767: deQueue (lanPartyLib.c:885)
+==29226==    by 0x10A496: printAllTeamsOnRoundAndFillStacks (lanPartyLib.c:384)
+==29226==    by 0x10A88D: printRounds (lanPartyLib.c:484)
+==29226==    by 0x1095E2: main (main.c:92)
+==29226== 
+==29226== LEAK SUMMARY:
+==29226==    definitely lost: 3,638 bytes in 187 blocks
+==29226==    indirectly lost: 870 bytes in 64 blocks
+==29226==      possibly lost: 0 bytes in 0 blocks
+==29226==    still reachable: 472 bytes in 1 blocks
+==29226==         suppressed: 0 bytes in 0 blocks
+==29226== 
+==29226== Use --track-origins=yes to see where uninitialised values come from
+==29226== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 0 from 0)
+==29226== 
+==29226== 1 errors in context 1 of 10:
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10BB83: freeTeam (lanPartyLib.c:1013)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== 
+==29226== 1 errors in context 2 of 10:
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x484B235: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==29226==    by 0x10BB74: freeTeam (lanPartyLib.c:1012)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== 
+==29226== 1 errors in context 3 of 10:
+==29226== Conditional jump or move depends on uninitialised value(s)
+==29226==    at 0x10BB63: freeTeam (lanPartyLib.c:1007)
+==29226==    by 0x10BBC6: freeList (lanPartyLib.c:1024)
+==29226==    by 0x1097CE: main (main.c:137)
+==29226== 
+==29226== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 0 from 0)
